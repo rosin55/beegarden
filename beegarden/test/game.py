@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-"""Тестовая игра"""
+"""Тестовая игра
+   работает после правок в core.py см. коммиты
+"""
 import random
 
 from robogame_engine.theme import theme
@@ -162,8 +164,8 @@ if __name__ == '__main__':
         # theme_mod_path='beegarden.themes.dark',
     )
 
-    count = 10
-    bees = [WorkerBee(pos=Point(400,400)) for i in range(count)]
+    count = 5
+    bees = [WorkerBee(pos=Point(400, 400)) for i in range(count)]
     bees_2 = [GreedyBee() for i in range(count)]
     bees_3 = [HunterBee() for i in range(count)]
     bees_4 = [Next2Bee() for i in range(count)]
