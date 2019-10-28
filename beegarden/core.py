@@ -14,9 +14,11 @@ from robogame_engine.theme import theme
 
 class SceneObjectsGetter(object):
     _objects_holder = None
+    __scene = None
     __flowers = None
     __bees = None
     __beehives = None
+
 
     @property
     def flowers(self):
