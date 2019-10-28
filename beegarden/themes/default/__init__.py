@@ -14,6 +14,7 @@ METER_2_COLOR = (232, 129, 31)
 
 TEAMS_COUNT = 4
 
+#DEBUG = True
 DEBUG = False
 
 MAX_HEALTH = 100

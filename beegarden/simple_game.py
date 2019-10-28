@@ -14,4 +14,3 @@ if __name__ == '__main__':
     bee = MyBee()  # bee born
 
     scene.go()  # let the world revolves around you
-
