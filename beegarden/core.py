@@ -129,7 +129,7 @@ class Bee(HoneyHolder, GameObject, SceneObjectsGetter):
     def dead(self):
         return self._dead
 
-    def move_at(self, target, speed=None):
+    def move_at(self, target, speed=2): # задание нач. скорости
         if self._dead:
             return
         super(Bee, self).move_at(target, speed)
