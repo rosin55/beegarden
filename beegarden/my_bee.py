@@ -10,6 +10,7 @@ class MyBee(Bee):
         """ рождение пчелы """
         Bee.__init__(self)
         self.flower = self.flowers[-1]   # выбираем нашим первый попавшийся цветок
+        self.last_flower_id = self.flower.id # указатель в списке цветочков
         self.move_at(self.flower)  # летим к нему
 
     def on_stop_at_flower(self, flower):
@@ -37,10 +38,11 @@ class MyBee(Bee):
     def go_next_flower(self):
         """ поиск следующего цветка """
         if not self.flower.honey:   # в моём цветке больше нет мёда
-            if not self.flowers:  # и цветов не осталось
+            if not self.last_flower_id:  # и цветов не осталось, указатель 0
                 if self.honey:  # а во мне есть мёд
                     self.move_at(self.my_beehive)  # летим к улью
                 return   # цветов с мёдом больше нет, стоп
             else:  # остались цветы с мёдом
-                self.flower = self.flowers[-1]   # берем следующий из списка
+                self.last_flower_id = self.last_flower_id - 1 # номер следующего цветка
+                self.flower = self.flowers[self.last_flower_id]   # берем следующий из списка
         self.move_at(self.flower)  # и летим к своему цветку
