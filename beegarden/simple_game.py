@@ -7,6 +7,7 @@ from beegarden.my_bee import MyBee
 if __name__ == '__main__':
     scene = Beegarden(
         name="My little garden",
+        beehives_count=2,
         flowers_count=5,
         theme_mod_path='beegarden.themes.for_test',
     )
